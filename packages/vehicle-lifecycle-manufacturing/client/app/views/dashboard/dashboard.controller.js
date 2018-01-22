@@ -225,7 +225,7 @@ angular.module('bc-manufacturer')
     $interval(function() {
       if(status.orderStatus == $scope.statuses[2] && !done_create_usage_record) {
         var usageRecord = {
-          "$class": "org.vda.CreateUsageRecord",
+          "$class": "org.example.vda.CreateUsageRecord",
           "usageID": "USAGE"+status.vin,
           "vin": status.vin,
         }

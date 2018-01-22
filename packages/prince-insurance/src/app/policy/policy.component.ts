@@ -46,7 +46,7 @@ export class PolicyComponent {
 
         this.last_event_id = this.alert.eventId;
 
-        //{"$class":"org.vda.AddUsageEventEvent","vin":"53f09d9655d751049","usageEvents":{"$class":"org.vda.UsageEvent","eventType":"ACCIDENT","acceleration":25,"temperature":10,"humidity":12,"light_level":20},"eventId":"a1e0f0a4-3df8-4c5b-ad23-53dc6db27a0d#0","timestamp":"2017-09-18T12:41:15.536Z","_msgid":"c936f38a.0c1a7"} 1 main.bundle.js:296:13
+        //{"$class":"org.example.vda.AddUsageEventEvent","vin":"53f09d9655d751049","usageEvents":{"$class":"org.example.vda.UsageEvent","eventType":"ACCIDENT","acceleration":25,"temperature":10,"humidity":12,"light_level":20},"eventId":"a1e0f0a4-3df8-4c5b-ad23-53dc6db27a0d#0","timestamp":"2017-09-18T12:41:15.536Z","_msgid":"c936f38a.0c1a7"} 1 main.bundle.js:296:13
         
         var acc_icon = "";
         var pitch_icon = "";
@@ -115,10 +115,10 @@ export class PolicyComponent {
     this.L = winRef.nativeWindow.L;
 
     this.car = {
-      $class: "org.vda.Vehicle",
+      $class: "org.example.vda.Vehicle",
       vin: "UNKNOWN",
       vehicleDetails: {
-        $class: "org.vda.VehicleDetails",
+        $class: "org.example.vda.VehicleDetails",
         make: "",
         modelType: "",
         colour: "",
@@ -311,7 +311,7 @@ export class PolicyComponent {
     var vehicle_id = vehicle_id_data[vehicle_id_data.length-1]
 
     var XMLReq = new XMLHttpRequest();
-    XMLReq.open("GET", "http://localhost:3000/api/queries/Q2?vehicleDetails=resource%3Aorg.vda.Vehicle%23"+vehicle_id);
+    XMLReq.open("GET", "http://localhost:3000/api/queries/Q2?vehicleDetails=resource%3Aorg.example.vda.Vehicle%23"+vehicle_id);
     XMLReq.onreadystatechange = function() {
       if (XMLReq.readyState == XMLHttpRequest.DONE)
       {

@@ -98,7 +98,7 @@ export class OverviewComponent implements OnInit {
         var vin = vin_data[vin_data.length-1]
   
         var XMLReq = new XMLHttpRequest();
-        XMLReq.open("GET", "http://localhost:3000/api/queries/Q2?vehicleDetails=resource%3Aorg.vda.Vehicle%23"+vin);
+        XMLReq.open("GET", "http://localhost:3000/api/queries/Q2?vehicleDetails=resource%3Aorg.example.vda.Vehicle%23"+vin);
         XMLReq.onreadystatechange = function() {
           if (XMLReq.readyState == XMLHttpRequest.DONE)
           {
