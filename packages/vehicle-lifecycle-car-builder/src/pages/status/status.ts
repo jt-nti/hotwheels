@@ -131,16 +131,18 @@ export class StatusPage implements OnInit{
     
     document.getElementById('insureBtn').getElementsByTagName('span')[0].innerHTML = "Processing ..."
     
-    this.geolocation.getCurrentPosition().then((location) => {
-      success(location)
-    }).catch((err) => {
-      error(err);
-    })
+    // this.geolocation.getCurrentPosition().then((location) => {
+    //   success(location)
+    // }).catch((err) => {
+    //   error(err);
+    // })
+
+    success();
 
     this.stage[5] = "Insured";
 
     var parent = this;
-    function success(position)
+    function success()
     {
       document.getElementById('insureBtn').getElementsByTagName('span')[0].innerHTML = "Request Sent &#10004;"
       var full_car = {};
@@ -154,43 +156,16 @@ export class StatusPage implements OnInit{
         manufacturing_date: new Date(),
         location:
           {
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude
+            // latitude: position.coords.latitude,
+            // longitude: position.coords.longitude
+            latitude: 51.02670,
+            longitude: -1.39887
           }
       };
   
       if(parent.ready) {
         parent.websocketInsurance.send(JSON.stringify(order));
       };
-    }
-
-    function error(error) {
-      console.log(error)
-      parent.stage.splice(5,1)
-      document.getElementById('insureBtn').getElementsByTagName('span')[0].innerHTML = "Insure me <img src='assets/arrow_right.svg' />"
-      switch(error.code) {
-        case error.PERMISSION_DENIED:
-          console.log("Location information is unavailable, your browser may be blocking them. Using a default location")
-          parent.stage[5] = "Insured";
-          success({"coords": {"latitude": null, "longitude": null}})
-          break;
-        case error.POSITION_UNAVAILABLE:
-          console.log("Location information is unavailable, your browser may be blocking them. Using a default location")
-          parent.stage[5] = "Insured";
-          success({"coords": {"latitude": null, "longitude": null}})
-          break;
-        case error.TIMEOUT:
-          alert("The request to get user location timed out.")
-          break;
-        case error.UNKNOWN_ERROR:
-          alert("An unknown error occurred.")
-          break;
-        default: 
-          console.log("Location information is unknown. Using default")
-          parent.stage[5] = "Insured";
-          success({"coords": {"latitude": null, "longitude": null}})
-          break;
-      }
     }
   }
 }
