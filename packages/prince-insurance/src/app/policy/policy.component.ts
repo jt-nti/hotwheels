@@ -125,7 +125,7 @@ export class PolicyComponent {
         vin: "UNKNOWN"
       },
       vehicleStatus: "UNKNOWN",
-      owner: "resource:org.acme.vehicle.lifecycle.PrivateOwner#dan"
+      owner: "resource:org.example.vehicle.lifecycle.PrivateOwner#dan"
     }
 
     this.policy = {

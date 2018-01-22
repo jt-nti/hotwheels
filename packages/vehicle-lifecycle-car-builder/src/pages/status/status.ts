@@ -149,7 +149,7 @@ export class StatusPage implements OnInit{
   
       var order = {
         vehicleDetails: full_car,
-        requestee: "resource:org.acme.vehicle.lifecycle.PrivateOwner#dan",
+        requestee: "resource:org.example.vehicle.lifecycle.PrivateOwner#dan",
         policyType: "Fully Comprehensive",
         manufacturing_date: new Date(),
         location:

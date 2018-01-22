@@ -92,10 +92,10 @@ export class BuilderPage implements OnInit {
     Object.keys(this.states).forEach((key) => full_car[key] = this.states[key]);
 
     var order = {
-      $class: 'org.acme.vehicle.lifecycle.manufacturer.PlaceOrder',
+      $class: 'org.example.vehicle.manufacturer.PlaceOrder',
       vehicleDetails: vehicleDetails,
-      manufacturer: 'resource:org.acme.vehicle.lifecycle.manufacturer.Manufacturer#Arium',
-      orderer: 'resource:org.acme.vehicle.lifecycle.PrivateOwner#dan',
+      manufacturer: 'resource:org.example.vehicle.manufacturer.Manufacturer#Arium',
+      orderer: 'resource:org.example.vehicle.lifecycle.PrivateOwner#dan',
       orderId: this.generateID()
     };
 
