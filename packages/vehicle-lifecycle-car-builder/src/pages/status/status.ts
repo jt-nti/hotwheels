@@ -137,11 +137,12 @@ export class StatusPage implements OnInit{
     //   error(err);
     // })
 
-    success();
-
     this.stage[5] = "Insured";
 
     var parent = this;
+
+    success();
+
     function success()
     {
       document.getElementById('insureBtn').getElementsByTagName('span')[0].innerHTML = "Request Sent &#10004;"
