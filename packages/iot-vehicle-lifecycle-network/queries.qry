@@ -1,0 +1,24 @@
+/**
+ * New query file
+ */
+
+query Q1{
+    description: "Select number of policies owned by the insurer"
+    statement:
+        SELECT org.example.insurance.Policy
+            WHERE (insurer == _$insurer)
+}
+
+query Q2{
+ 	description: "Select usage record by vin"
+  	statement:
+  		SELECT org.example.vda.UsageRecord
+  			WHERE (vehicleDetails == _$vehicleDetails)
+}
+
+query Q3{
+ 	description: "Select vehicle made by a particular manufacturer"
+  	statement:
+  		SELECT org.example.vda.Vehicle
+  			WHERE (vehicleDetails.make == _$manufacturer)
+}

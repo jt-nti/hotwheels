@@ -1,0 +1,44 @@
+/**
+ * New model file
+ */
+
+namespace org.example.insurance
+
+import org.example.vda.Vehicle
+import org.example.vda.VehicleDetails
+import composer.business.Business
+import composer.base.Person
+
+/**
+ * A manufacturer of vehicles
+ */
+participant Insurer identified by insurerId extends Business {
+  o String insurerId
+}
+
+asset Policy identified by policyID {
+  o String policyID
+  --> Vehicle vehicleDetails
+  --> Person holder
+  --> Insurer insurer
+  o String policyType
+}
+
+/**
+ * Transaction to create a policy
+ */
+transaction CreatePolicy {
+  o String policyId
+  --> Vehicle vehicleDetails
+  --> Person holder
+  --> Insurer insurer
+  o String policyType
+}
+
+event PolicyEvent {
+  o String policyId
+  --> Vehicle vehicleDetails
+  --> Person holder
+  --> Insurer insurer
+  o String policyType
+}
