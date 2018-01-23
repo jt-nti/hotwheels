@@ -3,12 +3,6 @@
 # Get the current directory.
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Errr, should already be installed in demoenv but that wasn't working?!
-npm install -g node-red
-npm install -g node-red-contrib-scx-ibmiotapp@0.0.47
-npm install -g cordova
-npm install -g composer-rest-server@latest
-
 # Start rest server
 composer-rest-server -c admin@iot-vehicle-lifecycle-network -p 3000 -n never > ./rest-server.log 2>&1 &
 
