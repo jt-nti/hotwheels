@@ -3,7 +3,7 @@
 # Get the current directory.
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-composer archive create  --sourceType dir --sourceName ${DIR}/packages/iot-vehicle-lifecycle-network -a ./iot-vehicle-lifecycle-network.bna
+composer archive create  --sourceType dir --sourceName ${DIR}/../packages/iot-vehicle-lifecycle-network -a ./iot-vehicle-lifecycle-network.bna
 
 composer network deploy -c PeerAdmin@hlfv1 -a ./iot-vehicle-lifecycle-network.bna -A admin -S adminpw
 
