@@ -129,7 +129,7 @@ export class PolicyComponent {
     }
 
     this.policy = {
-      $class: "org.insurance.Policy",
+      $class: "org.example.insurance.Policy",
       policyID: "",
       vId: "",
       holder: "",

@@ -10,7 +10,7 @@ npm install -g cordova
 npm install -g composer-rest-server@latest
 
 # Start rest server
-composer-rest-server -c admin@iot-vehicle-lifecycle-network -p 3000 -n never
+composer-rest-server -c admin@iot-vehicle-lifecycle-network -p 3000 -n never > ./rest-server.log 2>&1 &
 
 # Start node red
 node-red ${DIR}/node-red-flows.json > ./node-red.log 2>&1 &

@@ -52,11 +52,11 @@ export class PopupComponent implements OnInit {
   approve() {
     var pID = this.generateID();
     var policy = {
-      $class: "org.insurance.CreatePolicy",
+      $class: "org.example.insurance.CreatePolicy",
       policyId: pID,
       vehicleDetails: "resource:org.example.vda.Vehicle#"+(<HTMLInputElement>document.getElementById("vin")).value,
       holder: "resource:org.example.vehicle.lifecycle.PrivateOwner#dan",
-      insurer: "resource:org.insurance.Insurer#prince",
+      insurer: "resource:org.example.insurance.Insurer#prince",
       policyType: "Fully Comprehensive"
     };
     
