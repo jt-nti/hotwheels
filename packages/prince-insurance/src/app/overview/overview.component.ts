@@ -75,7 +75,7 @@ export class OverviewComponent implements OnInit {
   {
     var parent = this;
     var XMLReq = new XMLHttpRequest();
-    XMLReq.open("GET", "http://localhost:3000/api/queries/Q1?insurer=resource%3Aorg.insurance.Insurer%23prince");
+    XMLReq.open("GET", "http://localhost:3000/api/queries/Q1?insurer=resource%3Aorg.example.insurance.Insurer%23prince");
     XMLReq.onreadystatechange = function() {
       if (XMLReq.readyState == XMLHttpRequest.DONE)
       {
